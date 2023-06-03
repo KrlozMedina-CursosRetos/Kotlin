@@ -27,7 +27,33 @@ fun main(args: Array<String>) {
 
     nombre = "Carlos"
     val apellido = "Medina"
+
     println("Mi nombre es $nombre $apellido")
 
+    if (nombre.isNotEmpty()) println("El tamano del nombre es ${nombre.length}") else println("el nombre es nulo")
 
+    val cadena : String = if (nombre.length > 4) {
+        "Tu nombre es largo"
+    } else {
+        "Tu nombre es corto"
+    }
+
+    println(cadena)
+
+    val nombreColor = "Cyan"
+
+    when(nombreColor) {
+        "Amarillo" -> println("El color del sol")
+        "Azul", "Cyan" -> println("El color del cielo")
+        else -> println("Sin color :(")
+    }
+
+    val code = 200
+    val msg = when(code) {
+        in 200..299 -> "OK"
+        in 400 .. 499 -> "No encontrado"
+        in 500 .. 599 -> "Server error"
+        else -> "Codigo desconocido"
+    }
+    println(msg)
 }
